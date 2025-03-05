@@ -4,7 +4,6 @@ When calling the sendTransaction method of staked_conn, please note the followin
 
 - A maximum of 5 calls per second is allowed.
 - You need to transfer an amount greater than or equal to 0.0001 SOL to any of the following accounts:
-  - 6fQaVhYZA4w3MBSXjJ81Vf6W1EDYeUPXpgVQ6UQyU1Av
   - 4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4
   - 7toBU3inhmrARGngC7z6SjyP85HgGMmCTEwGNRAcYnEK
   - 8mR3wB1nh4D6J9RUCugxUpc6ya8w38LPxZ3ZjcBhgzws
