@@ -1,0 +1,13 @@
+{
+  "name": "trade.0slot.example.node",
+  "version": "0.0.1",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "bs58": "^5.0.0",
+    "yargs": "^17.7.2"
+  }
+}
