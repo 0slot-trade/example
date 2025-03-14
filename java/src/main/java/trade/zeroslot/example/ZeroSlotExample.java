@@ -56,9 +56,9 @@ public class ZeroSlotExample {
         long lamports = 1L;
 
         // Add executors for different geographic endpoints
-        addExecutor(executor, startSignal, doneSignal, "de.0slot.trade", "https://de.0slot.trade?api-key=" + apiKey, ++lamports);
-        addExecutor(executor, startSignal, doneSignal, "ny.0slot.trade", "https://ny.0slot.trade?api-key=" + apiKey, ++lamports);
-        addExecutor(executor, startSignal, doneSignal, "ams.0slot.trade", "https://ams.0slot.trade?api-key=" + apiKey, ++lamports);
+        addExecutor(executor, startSignal, doneSignal, "de1.0slot.trade", "https://de1.0slot.trade?api-key=" + apiKey, ++lamports);
+        addExecutor(executor, startSignal, doneSignal, "ny1.0slot.trade", "https://ny1.0slot.trade?api-key=" + apiKey, ++lamports);
+        addExecutor(executor, startSignal, doneSignal, "ams1.0slot.trade", "https://ams1.0slot.trade?api-key=" + apiKey, ++lamports);
 
         try {
             System.out.println("Starting all threads...");

@@ -84,7 +84,7 @@ func main() {
 	}
 
 	// Create a new client
-	zeroslot := rpc.New("https://de.0slot.trade?api-key=" + *apiKey)
+	zeroslot := rpc.New("https://de1.0slot.trade?api-key=" + *apiKey)
 
 	// Send the transaction
 	txSig, err := zeroslot.SendTransactionWithOpts(

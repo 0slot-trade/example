@@ -11,7 +11,7 @@ import base58
 async def send_solana_transaction(api_key, private_key, tip_key, to_public_key):
     # Create two separate clients: one for fetching the latest blockhash and another for sending the transaction.
     client_for_blockhash = AsyncClient(f"https://api.mainnet-beta.solana.com")
-    client_for_send = AsyncClient(f"https://de.0slot.trade?api-key=" + api_key)
+    client_for_send = AsyncClient(f"https://de1.0slot.trade?api-key=" + api_key)
 
     # Fetch the latest blockhash from the Solana network.
     latest_blockhash = await client_for_blockhash.get_latest_blockhash()

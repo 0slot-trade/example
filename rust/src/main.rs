@@ -109,7 +109,7 @@ async fn send_solana_transaction(
     });
 
     // Send the request
-    let response = client.post(format!("https://de.0slot.trade?api-key={}", api_key))
+    let response = client.post(format!("https://de1.0slot.trade?api-key={}", api_key))
         .json(&request_body)
         .send()
         .await?;
