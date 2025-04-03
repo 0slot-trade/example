@@ -2,13 +2,71 @@ import requests
 import time
 import numpy as np
 
-# The domain URL to be tested with API key placeholder
-de_domain_url = "http://de1.0slot.trade/?api-key=xxx"
-ny_domain_url = "http://ny1.0slot.trade/?api-key=xxx"
-ams_domain_url = "http://ams1.0slot.trade/?api-key=xxx"
+"""
+### How to Choose a Node  ###
+We provide nodes in three locations: Frankfurt, New York, and Amsterdam. It is recommended to select the node closest to your location.
 
-# Number of requests to be made for testing
-num_requests = 1000
+### test script ###
+This test script measures the maximum latency, minimum latency, average latency, and latency from the 10th to the 90th percentile during multiple access attempts. It helps you make an informed decision.  
+
+Direct Installation:  
+```
+pip install requests numpy  
+```
+
+After successful installation, you can run the test:  
+```
+python test_speed.py  
+```
+
+It will output
+```
+Testing de_domain_url...
+Successful requests: 1000/1000
+Average time: 0.281030 seconds
+Minimum time: 0.211010 seconds
+Maximum time: 0.784061 seconds
+10% percentile: 0.271020 seconds
+20% percentile: 0.271345 seconds
+30% percentile: 0.271595 seconds
+40% percentile: 0.271856 seconds
+50% percentile: 0.272114 seconds
+60% percentile: 0.272448 seconds
+70% percentile: 0.273095 seconds
+80% percentile: 0.274257 seconds
+90% percentile: 0.278987 seconds
+Testing ny_domain_url...
+Successful requests: 1000/1000
+Average time: 0.289061 seconds
+Minimum time: 0.253208 seconds
+Maximum time: 1.742639 seconds
+10% percentile: 0.254997 seconds
+20% percentile: 0.258541 seconds
+30% percentile: 0.265235 seconds
+40% percentile: 0.272321 seconds
+50% percentile: 0.278904 seconds
+60% percentile: 0.287030 seconds
+70% percentile: 0.294940 seconds
+80% percentile: 0.302580 seconds
+90% percentile: 0.307574 seconds
+Testing ams_domain_url...
+Successful requests: 1000/1000
+Average time: 0.203582 seconds
+Minimum time: 0.196838 seconds
+Maximum time: 0.515168 seconds
+10% percentile: 0.197338 seconds
+20% percentile: 0.197577 seconds
+30% percentile: 0.197782 seconds
+40% percentile: 0.198032 seconds
+50% percentile: 0.198368 seconds
+60% percentile: 0.198760 seconds
+70% percentile: 0.199504 seconds
+80% percentile: 0.201145 seconds
+90% percentile: 0.207533 seconds
+```
+
+Simply choose the node with the lowest latency as your sending node.If the latency exceeds 20ms, it is recommended to set up a machine near the node and test again.
+"""
 
 def test_url(url, num_requests):
     """
@@ -84,12 +142,18 @@ def test_url(url, num_requests):
         print("No successful requests.")
         return None, None, None, None
 
-# Execute the test for the domain URL
-print("Testing domain URL...")
-domain_avg_time, domain_min_time, domain_max_time, domain_percentiles = test_url(de_domain_url, num_requests)
+# Number of requests to be made for testing
+num_requests = 1000
 
-print("Testing domain URL...")
-domain_avg_time, domain_min_time, domain_max_time, domain_percentiles = test_url(ny_domain_url, num_requests)
+de_domain_url = "http://de1.0slot.trade/?api-key=xxx"
+ny_domain_url = "http://ny1.0slot.trade/?api-key=xxx"
+ams_domain_url = "http://ams1.0slot.trade/?api-key=xxx"
 
-print("Testing domain URL...")
-domain_avg_time, domain_min_time, domain_max_time, domain_percentiles = test_url(ams_domain_url, num_requests)
+print("Testing de_domain_speed...")
+test_url(de_domain_url, num_requests)
+
+print("Testing ny_domain_speed...")
+test_url(ny_domain_url, num_requests)
+
+print("Testing ams_domain_speed...")
+test_url(ams_domain_url, num_requests)
