@@ -3,7 +3,9 @@ import time
 import numpy as np
 
 # The domain URL to be tested with API key placeholder
-domain_url = "http://de1.0slot.trade/?api-key=xxx"
+de_domain_url = "http://de1.0slot.trade/?api-key=xxx"
+ny_domain_url = "http://ny1.0slot.trade/?api-key=xxx"
+ams_domain_url = "http://ams1.0slot.trade/?api-key=xxx"
 
 # Number of requests to be made for testing
 num_requests = 1000
@@ -84,4 +86,10 @@ def test_url(url, num_requests):
 
 # Execute the test for the domain URL
 print("Testing domain URL...")
-domain_avg_time, domain_min_time, domain_max_time, domain_percentiles = test_url(domain_url, num_requests)
+domain_avg_time, domain_min_time, domain_max_time, domain_percentiles = test_url(de_domain_url, num_requests)
+
+print("Testing domain URL...")
+domain_avg_time, domain_min_time, domain_max_time, domain_percentiles = test_url(ny_domain_url, num_requests)
+
+print("Testing domain URL...")
+domain_avg_time, domain_min_time, domain_max_time, domain_percentiles = test_url(ams_domain_url, num_requests)
