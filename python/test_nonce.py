@@ -23,7 +23,9 @@ async def send_solana_transaction(api_key, private_key, nonce_public_key, to_pub
     # Our TIP receiving addresses - using different addresses for DE and NY to simulate multiple Landing Services
     de_tip_receiver = Pubkey.from_string("6fQaVhYZA4w3MBSXjJ81Vf6W1EDYeUPXpgVQ6UQyU1Av")
     ny_tip_receiver = Pubkey.from_string("4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4")
-    # Nonce account public key created by sender - must be associated (see documentation)
+    # Nonce account public key created by sender - must be associated
+    # solana-keygen new -o nonce-account.json
+    # solana -k sender.json create-nonce-account nonce-account.json 0.0015
     nonce_account_pubkey = Pubkey.from_string(nonce_public_key)
 
     # Get nonce account info to extract the current nonce value
