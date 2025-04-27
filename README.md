@@ -3,7 +3,7 @@ The usage of the staked_conn interface is similar to the RPC interface, primaril
 When calling the sendTransaction method of staked_conn, please note the following:
 
 - A maximum of 5 calls per second is allowed.
-- You need to transfer an amount greater than or equal to 0.0001 SOL to any of the following accounts:
+- You need to transfer an amount greater than or equal to 0.001 SOL to any of the following accounts:
   - 4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4
   - 7toBU3inhmrARGngC7z6SjyP85HgGMmCTEwGNRAcYnEK
   - 8mR3wB1nh4D6J9RUCugxUpc6ya8w38LPxZ3ZjcBhgzws
@@ -36,7 +36,7 @@ When calling the sendTransaction method of staked_conn, please note the followin
 
 Add an instruction to the Transaction (preferably inserted at the beginning):
 ```javascript
-transaction.addInstruction(fromPublicKey, '6fQaVhYZA4w3MBSXjJ81Vf6W1EDYeUPXpgVQ6UQyU1Av', 100000);
+transaction.addInstruction(fromPublicKey, '6fQaVhYZA4w3MBSXjJ81Vf6W1EDYeUPXpgVQ6UQyU1Av', 1000000);
 ```
 
 We hope the above information helps you better understand and use the staked_conn interface. If you have any questions, please feel free to contact our support team.
