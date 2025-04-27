@@ -64,7 +64,7 @@ async fn send_solana_transaction(
         &receiver,        // Receiver's public key
         1,                // Amount to transfer (1 lamports)
     );
-    // You need to transfer an amount greater than or equal to 0.0001 SOL to any of the following accounts:
+    // You need to transfer an amount greater than or equal to 0.001 SOL to any of the following accounts:
     // 4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4
     // 7toBU3inhmrARGngC7z6SjyP85HgGMmCTEwGNRAcYnEK
     // 8mR3wB1nh4D6J9RUCugxUpc6ya8w38LPxZ3ZjcBhgzws
@@ -78,7 +78,7 @@ async fn send_solana_transaction(
     let tip_transfer_instruction = system_instruction::transfer(
         &sender.pubkey(), // Sender's public key
         &tip_receiver,    // Tip receiver's public key
-        100000,           // Amount to transfer as a tip (0.0001 SOL in this case)
+        1000000,           // Amount to transfer as a tip (0.001 SOL in this case)
     );
 
     // Create a transaction containing the instructions
@@ -109,7 +109,7 @@ async fn send_solana_transaction(
     });
 
     // Send the request
-    let response = client.post(format!("https://de1.0slot.trade?api-key={}", api_key))
+    let response = client.post(format!("https://de.0slot.trade?api-key={}", api_key))
         .json(&request_body)
         .send()
         .await?;

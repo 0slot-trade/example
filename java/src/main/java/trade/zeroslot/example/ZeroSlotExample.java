@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 public class ZeroSlotExample {
 
     private static final int NUM_THREADS = 3;
-    private static final long LAMPORTS = 100000l; //0.0001
+    private static final long LAMPORTS = 1000000l; //0.001
     private static String apiKey;
     private static String rpcUrl;
 
@@ -56,9 +56,9 @@ public class ZeroSlotExample {
         long lamports = 1L;
 
         // Add executors for different geographic endpoints
-        addExecutor(executor, startSignal, doneSignal, "de1.0slot.trade", "https://de1.0slot.trade?api-key=" + apiKey, ++lamports);
-        addExecutor(executor, startSignal, doneSignal, "ny1.0slot.trade", "https://ny1.0slot.trade?api-key=" + apiKey, ++lamports);
-        addExecutor(executor, startSignal, doneSignal, "ams1.0slot.trade", "https://ams1.0slot.trade?api-key=" + apiKey, ++lamports);
+        addExecutor(executor, startSignal, doneSignal, "de.0slot.trade", "https://de.0slot.trade?api-key=" + apiKey, ++lamports);
+        addExecutor(executor, startSignal, doneSignal, "ny.0slot.trade", "https://ny.0slot.trade?api-key=" + apiKey, ++lamports);
+        addExecutor(executor, startSignal, doneSignal, "ams.0slot.trade", "https://ams.0slot.trade?api-key=" + apiKey, ++lamports);
 
         try {
             System.out.println("Starting all threads...");
@@ -93,7 +93,7 @@ public class ZeroSlotExample {
 
                 // Create and populate the transaction
                 Transaction transaction = new Transaction();
-                // You need to transfer an amount greater than or equal to 0.0001 SOL to any of the following accounts:
+                // You need to transfer an amount greater than or equal to 0.001 SOL to any of the following accounts:
                 // 4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4
                 // 7toBU3inhmrARGngC7z6SjyP85HgGMmCTEwGNRAcYnEK
                 // 8mR3wB1nh4D6J9RUCugxUpc6ya8w38LPxZ3ZjcBhgzws

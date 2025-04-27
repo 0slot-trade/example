@@ -11,7 +11,7 @@ import base58
 async def send_solana_transaction(api_key, private_key, tip_key, to_public_key):
     # Create two separate clients: one for fetching the latest blockhash and another for sending the transaction.
     client_for_blockhash = AsyncClient(f"https://api.mainnet-beta.solana.com")
-    client_for_send = AsyncClient(f"https://de1.0slot.trade?api-key=" + api_key)
+    client_for_send = AsyncClient(f"https://de.0slot.trade?api-key=" + api_key)
 
     # Fetch the latest blockhash from the Solana network.
     latest_blockhash = await client_for_blockhash.get_latest_blockhash()
@@ -32,7 +32,7 @@ async def send_solana_transaction(api_key, private_key, tip_key, to_public_key):
             lamports=1                    # Amount to transfer (1 lamports).
         )
     )
-    # You need to transfer an amount greater than or equal to 0.0001 SOL to any of the following accounts:
+    # You need to transfer an amount greater than or equal to 0.001 SOL to any of the following accounts:
     # 4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4
     # 7toBU3inhmrARGngC7z6SjyP85HgGMmCTEwGNRAcYnEK
     # 8mR3wB1nh4D6J9RUCugxUpc6ya8w38LPxZ3ZjcBhgzws
@@ -47,7 +47,7 @@ async def send_solana_transaction(api_key, private_key, tip_key, to_public_key):
         TransferParams(
             from_pubkey=sender.pubkey(),  # Sender's public key.
             to_pubkey=tip_receiver,       # Tip receiver's public key.
-            lamports=100000               # Amount to transfer as a tip (0.0001 SOL in this case).
+            lamports=1000000               # Amount to transfer as a tip (0.001 SOL in this case).
         )
     )
 

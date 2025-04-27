@@ -47,7 +47,7 @@ async def send_solana_transaction(api_key, private_key, nonce_public_key, to_pub
     # Create transaction instructions for Germany endpoint
     # Includes:
     # 1. Main transfer (1 lamport)
-    # 2. Tip transfer (100,000 lamports = 0.0001 SOL)
+    # 2. Tip transfer (1,000,000 lamports = 0.001 SOL)
     de_instructions = [
         transfer(
             TransferParams(
@@ -60,7 +60,7 @@ async def send_solana_transaction(api_key, private_key, nonce_public_key, to_pub
             TransferParams(
                 from_pubkey=sender.pubkey(),
                 to_pubkey=de_tip_receiver,
-                lamports=100000
+                lamports=1000000
             )
         )
     ]

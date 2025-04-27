@@ -44,7 +44,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to get recent blockhash: %v", err)
 	}
-	// You need to transfer an amount greater than or equal to 0.0001 SOL to any of the following accounts:
+	// You need to transfer an amount greater than or equal to 0.001 SOL to any of the following accounts:
 	// 4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4
 	// 7toBU3inhmrARGngC7z6SjyP85HgGMmCTEwGNRAcYnEK
 	// 8mR3wB1nh4D6J9RUCugxUpc6ya8w38LPxZ3ZjcBhgzws
@@ -55,7 +55,7 @@ func main() {
 	// Ey2JEr8hDkgN8qKJGrLf2yFjRhW7rab99HVxwi5rcvJE
 	// 4iUgjMT8q2hNZnLuhpqZ1QtiV8deFPy2ajvvjEpKKgsS
 	// 3Rz8uD83QsU8wKvZbgWAPvCNDU6Fy8TSZTMcPm3RB6zt
-	tip_inst := system.NewTransferInstruction(100000, senderPublicKey, tipPublicKey).Build()
+	tip_inst := system.NewTransferInstruction(1000000, senderPublicKey, tipPublicKey).Build()
 
 	// Create a transfer instruction
 	instruction := system.NewTransferInstruction(1, senderPublicKey, receiverPublicKey).Build()
@@ -84,7 +84,7 @@ func main() {
 	}
 
 	// Create a new client
-	zeroslot := rpc.New("https://de1.0slot.trade?api-key=" + *apiKey)
+	zeroslot := rpc.New("https://de.0slot.trade?api-key=" + *apiKey)
 
 	// Send the transaction
 	txSig, err := zeroslot.SendTransactionWithOpts(

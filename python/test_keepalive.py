@@ -74,7 +74,7 @@ async def send_solana_transaction(api_key, private_key, tip_key, to_public_key, 
     tip_receiver = Pubkey.from_string(tip_key)
 
     main_transfer_instruction = transfer(TransferParams(from_pubkey = sender.pubkey(), to_pubkey = receiver, lamports = 1))
-    # You need to transfer an amount greater than or equal to 0.0001 SOL to any of the following accounts:
+    # You need to transfer an amount greater than or equal to 0.001 SOL to any of the following accounts:
     # 6fQaVhYZA4w3MBSXjJ81Vf6W1EDYeUPXpgVQ6UQyU1Av
     # 4HiwLEP2Bzqj3hM2ENxJuzhcPCdsafwiet3oGkMkuQY4
     # 7toBU3inhmrARGngC7z6SjyP85HgGMmCTEwGNRAcYnEK
@@ -86,7 +86,7 @@ async def send_solana_transaction(api_key, private_key, tip_key, to_public_key, 
     # Ey2JEr8hDkgN8qKJGrLf2yFjRhW7rab99HVxwi5rcvJE
     # 4iUgjMT8q2hNZnLuhpqZ1QtiV8deFPy2ajvvjEpKKgsS
     # 3Rz8uD83QsU8wKvZbgWAPvCNDU6Fy8TSZTMcPm3RB6zt
-    tip_transfer_instruction = transfer(TransferParams(from_pubkey = sender.pubkey(), to_pubkey = tip_receiver, lamports = 100000))
+    tip_transfer_instruction = transfer(TransferParams(from_pubkey = sender.pubkey(), to_pubkey = tip_receiver, lamports = 1000000))
     message = Message.new_with_blockhash([main_transfer_instruction, tip_transfer_instruction], payer=sender.pubkey(), blockhash=latest_blockhash.value.blockhash)
     transaction = Transaction.new_unsigned(message)
     transaction.sign([sender], latest_blockhash.value.blockhash)
