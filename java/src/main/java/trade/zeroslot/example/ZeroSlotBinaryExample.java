@@ -44,7 +44,6 @@ public class ZeroSlotBinaryExample {
         tipKeyStr = args[4];
         toPublicKeyStr = args[5];
 
-        // 创建OkHttpClient实例（推荐使用单例模式）
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
                 .readTimeout(10, java.util.concurrent.TimeUnit.SECONDS)
