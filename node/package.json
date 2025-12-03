@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "start_bin": "node binary.js"
   },
   "dependencies": {
     "@solana/web3.js": "^1.98.0",
