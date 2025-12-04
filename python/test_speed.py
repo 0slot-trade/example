@@ -144,7 +144,7 @@ def test_url(url, num_requests):
 
 # Number of requests to be made for testing
 num_requests = 1000
-
+# prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
 de_domain_url = "http://de1.0slot.trade/?api-key=xxx"
 ny_domain_url = "http://ny1.0slot.trade/?api-key=xxx"
 ams_domain_url = "http://ams1.0slot.trade/?api-key=xxx"

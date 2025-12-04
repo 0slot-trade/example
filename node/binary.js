@@ -53,6 +53,7 @@ async function sendSolanaTransaction(apiKey, privateKey, tipKey, toPublicKey) {
     // Send the transaction to the Solana network.
     try {
         const transactionBuffer = Buffer.from(transaction.serialize());
+        // prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
         const response = await fetch(`https://de.0slot.trade/txb?api-key=${apiKey}`, {
             method: 'POST',
             headers: {

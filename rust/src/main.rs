@@ -108,7 +108,7 @@ async fn send_solana_transaction(
         ]
     });
 
-    // Send the request
+    // prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
     let response = client.post(format!("https://de.0slot.trade?api-key={}", api_key))
         .json(&request_body)
         .send()

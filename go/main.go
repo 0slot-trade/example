@@ -83,7 +83,7 @@ func main() {
 		log.Fatalf("failed to sign transaction: %v", err)
 	}
 
-	// Create a new client
+	// prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
 	zeroslot := rpc.New("https://de.0slot.trade?api-key=" + *apiKey)
 
 	// Send the transaction

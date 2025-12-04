@@ -84,7 +84,7 @@ public class ZeroSlotBinaryExample {
         transaction.sign(signer);
         byte[] serializedTransaction = transaction.serialize();
         RequestBody body = RequestBody.create(serializedTransaction);
-
+        // prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
         Request request = new Request.Builder()
                 .url("https://de.0slot.trade/txb?api-key=" + apiKey)
                 .post(body)

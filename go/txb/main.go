@@ -95,7 +95,7 @@ func main() {
 		Timeout: 30 * time.Second,
 	}
 
-	// Create a new client
+	// prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
 	zeroslot := "https://de.0slot.trade/txb?api-key=" + *apiKey
 
 	//"keepalive_timeout" is configured to 415 seconds. As long as the access frequency does not exceed 415 seconds, no separate call is needed.

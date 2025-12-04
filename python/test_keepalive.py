@@ -64,6 +64,7 @@ rpcClient.get_health()
 
 async def send_solana_transaction(api_key, private_key, tip_key, to_public_key, keep):
     client_for_blockhash = AsyncClient(f"https://api.mainnet-beta.solana.com")
+    # prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
     client_for_send = AsyncClient(f"https://de.0slot.trade?api-key=" + api_key)
 
     latest_blockhash = await client_for_blockhash.get_latest_blockhash()

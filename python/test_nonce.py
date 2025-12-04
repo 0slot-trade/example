@@ -12,6 +12,7 @@ from solana.rpc.async_api import AsyncClient
 async def send_solana_transaction(api_key, private_key, nonce_public_key, to_public_key):
     # Initialize clients for different regions
     client_for_blockhash = AsyncClient(f"https://api.mainnet-beta.solana.com")
+    # prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
     de_sender = AsyncClient(f"https://de.0slot.trade?api-key=" + api_key)  # Germany endpoint
     ny_sender = AsyncClient(f"https://ny.0slot.trade?api-key=" + api_key)  # New York endpoint
 

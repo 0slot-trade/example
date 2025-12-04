@@ -6,6 +6,7 @@ const { hideBin } = require('yargs/helpers');
 async function sendSolanaTransaction(apiKey, privateKey, tipKey, toPublicKey) {
     // Create two separate connections: one for fetching the latest blockhash and another for sending the transaction.
     const connectionForBlockhash = new Connection('https://api.mainnet-beta.solana.com', 'confirmed');
+    // prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
     const connectionForSend = new Connection(`https://de.0slot.trade?api-key=${apiKey}`, 'confirmed');
 
     // Fetch the latest blockhash from the Solana network.

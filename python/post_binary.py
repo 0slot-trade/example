@@ -71,6 +71,7 @@ async def send_solana_transaction(api_key, private_key, tip_key, to_public_key):
         transaction_bytes = bytes(transaction)
         # transaction_base64 = base64.b64encode(transaction_bytes).decode('utf-8')
         async with aiohttp.ClientSession() as session:
+            # prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
             async with session.post(f"https://de.0slot.trade/txb?api-key={api_key}",
                 data=transaction_bytes,
             ) as response:

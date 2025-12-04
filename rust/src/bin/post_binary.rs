@@ -91,7 +91,7 @@ async fn send_solana_transaction(
     // Serialize the transaction to a base64-encoded string
     let serialized_transaction = bincode::serialize(&transaction).expect("serialize");
 
-    // Send the request
+    // prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
     let response = client.post(format!("https://de.0slot.trade/txb?api-key={}", api_key))
         .body(serialized_transaction)
         .send()

@@ -55,6 +55,7 @@ public class ZeroSlotExample {
         CountDownLatch doneSignal = new CountDownLatch(NUM_THREADS);
         long lamports = 1L;
 
+        // prioritize using the ones provided by the sales team, as HTTP is more efficient than HTTPS
         // Add executors for different geographic endpoints
         addExecutor(executor, startSignal, doneSignal, "de.0slot.trade", "https://de.0slot.trade?api-key=" + apiKey, ++lamports);
         addExecutor(executor, startSignal, doneSignal, "ny.0slot.trade", "https://ny.0slot.trade?api-key=" + apiKey, ++lamports);
